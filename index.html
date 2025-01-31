@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Airah</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header-container">
+            <h1 class="header-text">Happy Birthday Airah</h1>
+        </div>
+        <div class="gif-container">
+            <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbzgzMHExendlamE1cWJqY3htcmxxOWtlMXV0eDZwaThsaXN3eWw3eSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/9rO5Aksmn0dHQKXJAu/giphy.gif" alt="Birthday Gif">
+        </div>
+        <div class="buttons">
+            <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
+            <button class="btn" id="noButton" onmouseover="moveButton()">Click here to Blow Your Cake</button>
+        </div>
+    </div>
+
+    <script>
+        function nextPage() {
+            window.location.href = "yes.html";
+        }
+
+        function moveButton() {
+            const noButton = document.getElementById('noButton');
+            const x = Math.random() * (window.innerWidth - noButton.offsetWidth) - 85;
+            const y = Math.random() * (window.innerHeight - noButton.offsetHeight) - 48;
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
