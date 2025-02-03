@@ -17,6 +17,10 @@
             align-items: center;
             text-align: center;
         }
+        /* Hide the audio controls */
+        audio {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -28,6 +32,12 @@
             <img src="https://media0.giphy.com/media/T86i6yDyOYz7J6dPhf/giphy.gif" alt="Cute animated illustration">
         </div>
     </div>
+
+    <!-- Add the birthday song audio -->
+    <audio id="birthdaySong" autoplay loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 
     <script>
         // Trigger confetti
@@ -53,6 +63,17 @@
 
         // Automatically make the page full screen when loaded
         window.onload = makeFullScreen;
+
+        // Play the birthday song
+        const birthdaySong = document.getElementById('birthdaySong');
+        birthdaySong.play().catch(error => {
+            console.error("Autoplay was blocked. Please interact with the page to play the song.");
+        });
+
+        // Play the song when the user interacts with the page (if autoplay is blocked)
+        document.addEventListener('click', () => {
+            birthdaySong.play();
+        });
     </script>
 </body>
 </html>
