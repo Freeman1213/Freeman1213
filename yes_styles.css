@@ -1,107 +1,58 @@
-/* Reset default margin and padding */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./yes_style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+        .container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1 class="header_text">Hurrayyyy!!</h1>
+        </div>
+        <div class="gif_container">
+            <img src="https://media0.giphy.com/media/T86i6yDyOYz7J6dPhf/giphy.gif" alt="Cute animated illustration">
+        </div>
+    </div>
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90vh;
-    background-color: rgb(189, 225, 122);
-    font-family: 'Nunito', sans-serif;
-    margin: 0;
-}
+    <script>
+        // Trigger confetti
+        function triggerConfetti() {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        }
 
-.container {
-    text-align: center;
-}
+        // Trigger confetti every 500ms
+        setInterval(triggerConfetti, 500);
 
-.header-container {
-    margin-bottom: 20px;
-}
+        // Make the page full screen
+        function makeFullScreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(err => {
+                    console.error(`Error attempting to enable full-screen mode: ${err.message}`);
+                });
+            }
+        }
 
-.header-text {
-    font-size: 40px;
-    font-weight: bold;
-    color: rgb(255, 255, 255);
-}
-
-.gif-container {
-    margin-bottom: 20px;
-}
-
-.gif-container img {
-    max-width: 100%;
-    height: auto;
-    max-height: 60vh;
-}
-
-.buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.btn {
-    background-color: #ffffff;
-    color: rgb(233, 48, 48);
-    padding: 15px 32px;
-    font-size: 16px;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.btn:hover {
-    background-color: rgb(233, 48, 48);
-    color: white;
-    transform: scale(1.05);
-}
-
-#noButton {
-    position: absolute;
-    transition: left 0.5s, top 0.5s;
-}
-
-/* Media Queries */
-@media only screen and (max-width: 320px) {
-    body {
-        height: 100vh;
-    }
-
-    .header-text {
-        font-size: 20px;
-    }
-
-    .gif-container img {
-        height: 60vh;
-    }
-
-    .btn {
-        padding: 10px 18px;
-        font-size: 12px;
-    }
-}
-
-@media only screen and (max-width: 414px) {
-    body {
-        height: 90vh;
-    }
-
-    .header-text {
-        font-size: 28px;
-    }
-
-    .gif-container img {
-        height: 60vh;
-    }
-
-    .btn {
-        padding: 15px 25px;
-        font-size: 14px;
-    }
-}
+        // Automatically make the page full screen when loaded
+        window.onload = makeFullScreen;
+    </script>
+</body>
+</html>
