@@ -1,18 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="stylesheet" href="./yes_style.css">
-        
-    </head> 
-    <body>
-        <div class="container">
-            <div >
-                <h1 class = "header_text">Hurrayyyy!!</h1>
-            </div>
-            <div class="gif_container">
-                <img src="https://media0.giphy.com/media/T86i6yDyOYz7J6dPhf/giphy.gif" alt="Cute animated illustration">
-            </div>
+<head>
+    <link rel="stylesheet" href="./yes_style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+        .container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1 class="header_text">Hurrayyyy!!</h1>
         </div>
-       
-    </body> 
+        <div class="gif_container">
+            <img src="https://media0.giphy.com/media/T86i6yDyOYz7J6dPhf/giphy.gif" alt="Cute animated illustration">
+        </div>
+    </div>
+
+    <script>
+        // Trigger confetti
+        function triggerConfetti() {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        }
+
+        // Trigger confetti every 500ms
+        setInterval(triggerConfetti, 500);
+
+        // Make the page full screen
+        function makeFullScreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(err => {
+                    console.error(`Error attempting to enable full-screen mode: ${err.message}`);
+                });
+            }
+        }
+
+        // Automatically make the page full screen when loaded
+        window.onload = makeFullScreen;
+    </script>
+</body>
 </html>
