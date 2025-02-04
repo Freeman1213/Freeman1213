@@ -21,6 +21,23 @@
         audio {
             display: none;
         }
+        /* Style for the Next Page button */
+        .next-page-button {
+            background-color: #ffffff;
+            color: rgb(233, 48, 48);
+            padding: 15px 32px;
+            font-size: 16px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 20px;
+        }
+        .next-page-button:hover {
+            background-color: rgb(233, 48, 48);
+            color: white;
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body>
@@ -31,6 +48,8 @@
         <div class="gif_container">
             <img src="https://media0.giphy.com/media/T86i6yDyOYz7J6dPhf/giphy.gif" alt="Cute animated illustration">
         </div>
+        <!-- Add a button to go to the next page -->
+        <button class="next-page-button" onclick="goToNextPage()">Next Page</button>
     </div>
 
     <!-- Add the birthday song audio -->
@@ -74,6 +93,11 @@
         document.addEventListener('click', () => {
             birthdaySong.play();
         });
+
+        // Function to redirect to the next page
+        function goToNextPage() {
+            window.location.href = "next_page.html"; // Redirect to the next page
+        }
     </script>
 </body>
 </html>
