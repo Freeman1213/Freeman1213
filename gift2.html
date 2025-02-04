@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="./yes_style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+    <style>
+      /* Make sure body takes full height */
+      body, html {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f7f7f7;
+      }
+
+      .container {
+        text-align: center;
+      }
+
+      .header_text {
+        font-size: 36px;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      .gif_container img {
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div>
+        <h1 class="header_text">HAHAHHAHA CHARR</h1>
+      </div>
+      <div class="gif_container">
+        <img src="https://media0.giphy.com/media/T86i6yDyOYz7J6dPhf/giphy.gif" alt="Cute animated illustration">
+      </div>
+    </div>
+
+    <script>
+      // Confetti effect on page load
+      window.onload = function () {
+        confetti({
+          particleCount: 200,
+          spread: 70,
+          origin: { x: 0.5, y: 0.5 },
+          colors: ['#ff0', '#f0f', '#0ff', '#ff7f0e'],
+        });
+      };
+    </script>
+  </body>
+</html>

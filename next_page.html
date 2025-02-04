@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Page</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffcccb; /* Light red background */
+            font-family: 'Nunito', sans-serif;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            font-size: 50px;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+        .gift-options {
+            display: flex;
+            gap: 20px;
+        }
+        .gift-button {
+            background-color: #ffffff;
+            color: #ff6f61;
+            padding: 20px 40px;
+            font-size: 20px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .gift-button:hover {
+            background-color: #ff6f61;
+            color: white;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Choose Your Gift</h1>
+        <div class="gift-options">
+            <button class="gift-button" onclick="chooseGift('Gift 1')">ME 🎁</button>
+            <button class="gift-button" onclick="chooseGift('Gift 2')">Ako kaya? 🎁</button>
+        </div>
+    </div>
+
+    <script>
+        // Function to handle gift selection
+       function chooseGift(gift) {
+    if (gift === "Gift 1") {
+        window.location.href = "gift1.html"; // Redirect to Gift 1 page
+    } else if (gift === "Gift 2") {
+        window.location.href = "gift2.html"; // Redirect to Gift 2 page
+    }
+        }
+    </script>
+</body>
+</html>
